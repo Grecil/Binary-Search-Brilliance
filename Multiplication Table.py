@@ -7,10 +7,10 @@ while low < high:
     # For each row i, count numbers <= mid by taking min of: column count (m) or mid/i
     for i in range(1, n + 1):
         count += min(m, mid // i)
-     # If we haven't found k numbers yet, search upper half; otherwise search lower half
+    # If we haven't found k numbers yet, search upper half; otherwise search lower half
     if count < k:
-        low = mid + 1 
-    else: 
+        low = mid + 1
+    else:
         high = mid
 
 print(low)

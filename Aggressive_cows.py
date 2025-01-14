@@ -15,17 +15,17 @@ stalls = list(map(int, input().split()))
 stalls.sort()
 
 left = 0
-right = stalls[n-1] - stalls[0]  # Maximum possible distance
+right = stalls[n - 1] - stalls[0]  # Maximum possible distance
 result = 0
 
 while left <= right:
     mid = (left + right) // 2
-    
+
     # If we can place k cows with this distance, try larger distance
     if can_place_cows(stalls, n, k, mid):
         result = mid
         left = mid + 1
     else:
         right = mid - 1
-        
+
 print(result)
